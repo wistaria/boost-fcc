@@ -128,7 +128,7 @@
 // BCB6 does cause problems. If we detect C++ Builder, then don't define 
 // BOOST_NO_STDC_NAMESPACE
 //
-#if !defined(__BORLANDC__) && !defined(__DMC__)
+#if !defined(__BORLANDC__) && !defined(__DMC__) && !defined(__FCC_VERSION)
 //
 // If STLport is using it's own namespace, and the real names are in
 // the global namespace, then we duplicate STLport's using declarations

@@ -93,8 +93,10 @@ public:
         unsigned int l;
         load(l);
         s.resize(l);
-        // note breaking a rule here - could be a problem on some platform
-        load_impl(const_cast<CharType *>(s.data()),get_mpi_datatype(CharType()),l);
+        if (l > 0) {
+          // note breaking a rule here - could be a problem on some platform
+          load_impl(const_cast<CharType *>(s.data()),get_mpi_datatype(CharType()),l);
+        }
     }
 
 private:

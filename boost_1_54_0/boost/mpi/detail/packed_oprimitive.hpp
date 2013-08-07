@@ -81,7 +81,9 @@ public:
     {
       unsigned int l = static_cast<unsigned int>(s.size());
       save(l);
-      save_impl(s.data(),get_mpi_datatype(CharType()),s.size());
+      if (l > 0) {
+        save_impl(s.data(),get_mpi_datatype(CharType()),s.size());
+      }
     }
 
 private:

@@ -34,7 +34,7 @@
 #elif defined(__GNUC__) \
   && ((__GNUC__ == 4 && __GNUC_MINOR__ >= 1) || (__GNUC__ > 4)) \
   && !defined(__INTEL_COMPILER) && !defined(__ICL) \
-  && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__)
+  && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__) && !defined(__FCC_VERSION)
 # include <boost/asio/detail/gcc_sync_fenced_block.hpp>
 #elif defined(BOOST_ASIO_WINDOWS) && !defined(UNDER_CE)
 # include <boost/asio/detail/win_fenced_block.hpp>
@@ -63,7 +63,7 @@ typedef gcc_x86_fenced_block fenced_block;
 #elif defined(__GNUC__) \
   && ((__GNUC__ == 4 && __GNUC_MINOR__ >= 1) || (__GNUC__ > 4)) \
   && !defined(__INTEL_COMPILER) && !defined(__ICL) \
-  && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__)
+  && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__) && !defined(__FCC_VERSION)
 typedef gcc_sync_fenced_block fenced_block;
 #elif defined(BOOST_ASIO_WINDOWS) && !defined(UNDER_CE)
 typedef win_fenced_block fenced_block;
