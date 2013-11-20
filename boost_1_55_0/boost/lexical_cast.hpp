@@ -146,7 +146,7 @@ namespace boost
     }
 } // namespace boost
 
-#if !defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION) && !defined(__SUNPRO_CC) && !defined(__PGIC__)
+#if !defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION) && !defined(__SUNPRO_CC) && !defined(__PGIC__) && !defined(__FCC_VERSION)
 
 #include <cmath>
 #include <istream>

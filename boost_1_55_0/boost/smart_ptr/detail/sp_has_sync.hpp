@@ -30,7 +30,7 @@
 
 # define BOOST_SP_HAS_SYNC
 
-#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 )
+#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 ) && !defined(__FCC_VERSION)
 
 #define BOOST_SP_HAS_SYNC
 

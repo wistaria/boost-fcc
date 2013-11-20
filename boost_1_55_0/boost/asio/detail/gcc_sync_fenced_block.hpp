@@ -20,7 +20,7 @@
 #if defined(__GNUC__) \
   && ((__GNUC__ == 4 && __GNUC_MINOR__ >= 1) || (__GNUC__ > 4)) \
   && !defined(__INTEL_COMPILER) && !defined(__ICL) \
-  && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__)
+  && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__) && !defined(__FCC_VERSION)
 
 #include <boost/asio/detail/push_options.hpp>
 
@@ -60,6 +60,6 @@ private:
 #endif // defined(__GNUC__)
        // && ((__GNUC__ == 4 && __GNUC_MINOR__ >= 1) || (__GNUC__ > 4))
        // && !defined(__INTEL_COMPILER) && !defined(__ICL)
-       // && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__)
+       // && !defined(__ICC) && !defined(__ECC) && !defined(__PATHSCALE__) && !defined(__FCC_VERSION)
 
 #endif // BOOST_ASIO_DETAIL_GCC_SYNC_FENCED_BLOCK_HPP
