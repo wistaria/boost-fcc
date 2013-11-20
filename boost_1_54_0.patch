@@ -78,6 +78,19 @@ index 66e5370..86600bf 100644
  
  #include <cmath>
  #include <istream>
+diff --git boost_1_54_0/boost/math/special_functions/lanczos.hpp boost_1_54_0/boost/math/special_functions/lanczos.hpp
+index ed89154..fc158b3 100644
+--- boost_1_54_0/boost/math/special_functions/lanczos.hpp
++++ boost_1_54_0/boost/math/special_functions/lanczos.hpp
+@@ -1283,7 +1283,7 @@ struct lanczos
+ } // namespace math
+ } // namespace boost
+ 
+-#if !defined(_CRAYC) && !defined(__CUDACC__) && (!defined(__GNUC__) || (__GNUC__ > 3) || ((__GNUC__ == 3) && (__GNUC_MINOR__ > 3)))
++#if !defined(_CRAYC) && !defined(__CUDACC__) && !defiend(__FCC_VERSION) && (!defined(__GNUC__) || (__GNUC__ > 3) || ((__GNUC__ == 3) && (__GNUC_MINOR__ > 3)))
+ #if (defined(_M_IX86_FP) && (_M_IX86_FP >= 2)) || defined(__SSE2__)
+ #include <boost/math/special_functions/detail/lanczos_sse2.hpp>
+ #endif
 diff --git boost_1_54_0/boost/mpi/detail/packed_iprimitive.hpp boost_1_54_0/boost/mpi/detail/packed_iprimitive.hpp
 index 6e981c7..bd139f5 100644
 --- boost_1_54_0/boost/mpi/detail/packed_iprimitive.hpp
@@ -110,3 +123,16 @@ index 1f59df8..ff32bf1 100644
      }
  
  private:
+diff --git boost_1_54_0/boost/smart_ptr/detail/sp_has_sync.hpp boost_1_54_0/boost/smart_ptr/detail/sp_has_sync.hpp
+index 16de21d..94d2a9a 100644
+--- boost_1_54_0/boost/smart_ptr/detail/sp_has_sync.hpp
++++ boost_1_54_0/boost/smart_ptr/detail/sp_has_sync.hpp
+@@ -30,7 +30,7 @@
+ 
+ # define BOOST_SP_HAS_SYNC
+ 
+-#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 )
++#elif defined( __GNUC__ ) && ( __GNUC__ * 100 + __GNUC_MINOR__ >= 401 ) && !defined(__FCC_VERSION)
+ 
+ #define BOOST_SP_HAS_SYNC
+ 
