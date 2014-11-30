@@ -98,7 +98,11 @@ namespace boost {
         template<class Ch, class Tr, class Alloc>
         typename basic_altstringbuf<Ch, Tr, Alloc>::pos_type  
         basic_altstringbuf<Ch, Tr, Alloc>:: 
+#ifndef _STLP_FJ_INTEL_COMPAT
         seekoff (off_type off, ::std::ios_base::seekdir way, ::std::ios_base::openmode which) {
+#else
+        seekoff (off_type off, ::std::ios_base::seekdir way, ::std::ios_base::openmode which, enum ::std::ios_base::_StlpFjSeek) {
+#endif
             if(pptr() != NULL && putend_ < pptr())
                 putend_ = pptr();
             if(which & ::std::ios_base::in && gptr() != NULL) {
@@ -144,7 +148,11 @@ namespace boost {
         template<class Ch, class Tr, class Alloc>
         typename basic_altstringbuf<Ch, Tr, Alloc>::pos_type 
         basic_altstringbuf<Ch, Tr, Alloc>:: 
+#ifndef _STLP_FJ_INTEL_COMPAT
         seekpos (pos_type pos, ::std::ios_base::openmode which) {
+#else
+        seekpos (pos_type pos, ::std::ios_base::openmode which, enum ::std::ios_base::_StlpFjSeek) {
+#endif
             off_type off = off_type(pos); // operation guaranteed by 27.4.3.2 table 88
             if(pptr() != NULL && putend_ < pptr())
                 putend_ = pptr();

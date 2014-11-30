@@ -95,12 +95,23 @@ namespace boost {
                 : putend_(NULL), is_allocated_(false), mode_(mode) 
                 { dealloc(); str(s); }
 
+#ifndef _STLP_FJ_INTEL_COMPAT
             virtual pos_type seekoff(off_type off, ::std::ios_base::seekdir way, 
                                      ::std::ios_base::openmode which 
                                      = ::std::ios_base::in | ::std::ios_base::out);
             virtual pos_type seekpos (pos_type pos, 
                                       ::std::ios_base::openmode which 
                                       = ::std::ios_base::in | ::std::ios_base::out);
+#else
+            virtual pos_type seekoff(off_type off, ::std::ios_base::seekdir way,
+                                     ::std::ios_base::openmode which
+                                     = ::std::ios_base::in | ::std::ios_base::out,
+                                     enum ::std::ios_base::_StlpFjSeek = ::std::ios_base::seek_none);
+            virtual pos_type seekpos (pos_type pos,
+                                      ::std::ios_base::openmode which
+                                      = ::std::ios_base::in | ::std::ios_base::out,
+                                      enum ::std::ios_base::_StlpFjSeek = ::std::ios_base::seek_none);
+#endif
             virtual int_type underflow();
             virtual int_type pbackfail(int_type meta = compat_traits_type::eof());
             virtual int_type overflow(int_type meta = compat_traits_type::eof());
