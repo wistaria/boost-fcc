@@ -2,7 +2,7 @@
 // strand.cpp
 // ~~~~~~~~~~
 //
-// Copyright (c) 2003-2013 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2014 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -34,6 +34,7 @@
 #endif // defined(BOOST_ASIO_HAS_BOOST_BIND)
 
 using namespace boost::asio;
+typedef io_service::strand strand;
 
 #if defined(BOOST_ASIO_HAS_BOOST_BIND)
 namespace bindns = boost;

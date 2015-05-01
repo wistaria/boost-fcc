@@ -127,7 +127,8 @@
 
    <span class="keyword">public</span><span class="special">:</span>
    <span class="identifier">MyClass</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">i</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span>   <span class="special">:</span>  <span class="identifier">int_</span><span class="special">(</span><span class="identifier">i</span><span class="special">)</span>  <span class="special">{}</span>
-   <span class="keyword">void</span> <span class="identifier">unlink</span><span class="special">()</span>     <span class="special">{</span>  <span class="identifier">auto_unlink_hook</span><span class="special">::</span><span class="identifier">unlink</span><span class="special">();</span>  <span class="special">}</span>
+   <span class="keyword">int</span>  <span class="identifier">get_int</span><span class="special">()</span>    <span class="special">{</span> <span class="keyword">return</span> <span class="identifier">int_</span><span class="special">;</span> <span class="special">}</span>
+   <span class="keyword">void</span> <span class="identifier">unlink</span><span class="special">()</span>     <span class="special">{</span>  <span class="identifier">auto_unlink_hook</span><span class="special">::</span><span class="identifier">unlink</span><span class="special">();</span> <span class="special">}</span>
    <span class="keyword">bool</span> <span class="identifier">is_linked</span><span class="special">()</span>  <span class="special">{</span>  <span class="keyword">return</span> <span class="identifier">auto_unlink_hook</span><span class="special">::</span><span class="identifier">is_linked</span><span class="special">();</span>  <span class="special">}</span>
 <span class="special">};</span>
 

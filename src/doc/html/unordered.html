@@ -118,14 +118,14 @@
         <span class="keyword">class</span> <span class="identifier">Key</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">Mapped</span><span class="special">,</span>
         <span class="keyword">class</span> <span class="identifier">Hash</span> <span class="special">=</span> <code class="computeroutput"><a class="link" href="boost/hash.html" title="Struct template hash">boost::hash</a></code><span class="special">&lt;</span><span class="identifier">Key</span><span class="special">&gt;,</span>
         <span class="keyword">class</span> <span class="identifier">Pred</span> <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">equal_to</span><span class="special">&lt;</span><span class="identifier">Key</span><span class="special">&gt;,</span>
-        <span class="keyword">class</span> <span class="identifier">Alloc</span> <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">allocator</span><span class="special">&lt;</span><span class="identifier">Key</span><span class="special">&gt;</span> <span class="special">&gt;</span>
+        <span class="keyword">class</span> <span class="identifier">Alloc</span> <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">allocator</span><span class="special">&lt;</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span><span class="identifier">Key</span> <span class="keyword">const</span><span class="special">,</span> <span class="identifier">Mapped</span><span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&gt;</span>
     <span class="keyword">class</span> <code class="computeroutput"><a class="link" href="boost/unordered_map.html" title="Class template unordered_map">unordered_map</a></code><span class="special">;</span>
 
     <span class="keyword">template</span><span class="special">&lt;</span>
         <span class="keyword">class</span> <span class="identifier">Key</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">Mapped</span><span class="special">,</span>
         <span class="keyword">class</span> <span class="identifier">Hash</span> <span class="special">=</span> <code class="computeroutput"><a class="link" href="boost/hash.html" title="Struct template hash">boost::hash</a></code><span class="special">&lt;</span><span class="identifier">Key</span><span class="special">&gt;,</span>
         <span class="keyword">class</span> <span class="identifier">Pred</span> <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">equal_to</span><span class="special">&lt;</span><span class="identifier">Key</span><span class="special">&gt;,</span>
-        <span class="keyword">class</span> <span class="identifier">Alloc</span> <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">allocator</span><span class="special">&lt;</span><span class="identifier">Key</span><span class="special">&gt;</span> <span class="special">&gt;</span>
+        <span class="keyword">class</span> <span class="identifier">Alloc</span> <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">allocator</span><span class="special">&lt;</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span><span class="identifier">Key</span> <span class="keyword">const</span><span class="special">,</span> <span class="identifier">Mapped</span><span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&gt;</span>
     <span class="keyword">class</span> <code class="computeroutput"><a class="link" href="boost/unordered_multimap.html" title="Class template unordered_multimap">unordered_multimap</a></code><span class="special">;</span>
 <span class="special">}</span>
 </pre>
@@ -187,7 +187,7 @@
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
-<td align="left"><p><small>Last revised: October 28, 2013 at 23:55:10 GMT</small></p></td>
+<td align="left"><p><small>Last revised: October 30, 2014 at 10:20:57 GMT</small></p></td>
 <td align="right"><div class="copyright-footer"></div></td>
 </tr></table>
 <hr>

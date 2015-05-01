@@ -33,18 +33,16 @@
 
 </span>BOOST_TYPE_ERASURE_FREE(qualified_name, function_name, N)</pre></div>
 <div class="refsect1">
-<a name="idp228891384"></a><h2>Description</h2>
+<a name="idp478945104"></a><h2>Description</h2>
 <p>
 The declaration of the concept is </p>
-<pre class="programlisting"><span class="special">*</span> <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">Sig</span><span class="special">&gt;</span>
-<span class="special">*</span> <span class="keyword">struct</span> <span class="special">::</span><span class="identifier">namespace1</span><span class="special">::</span><span class="identifier">namespace2</span><span class="special">::</span><span class="special">...</span><span class="special">::</span><span class="identifier">concept_name</span><span class="special">;</span>
-<span class="special">*</span> 
+<pre class="programlisting"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">Sig</span><span class="special">&gt;</span>
+<span class="keyword">struct</span> <span class="special">::</span><span class="identifier">namespace1</span><span class="special">::</span><span class="identifier">namespace2</span><span class="special">::</span><span class="special">...</span><span class="special">::</span><span class="identifier">concept_name</span><span class="special">;</span>
 </pre>
 <p> where Sig is a function type giving the signature of the function.</p>
 <p>This macro can only be used in the global namespace.</p>
 <p>Example:</p>
-<pre class="programlisting"><span class="special">*</span> <span class="identifier">BOOST_TYPE_ERASURE_FREE</span><span class="special">(</span><span class="special">(</span><span class="identifier">boost</span><span class="special">)</span><span class="special">(</span><span class="identifier">has_to_string</span><span class="special">)</span><span class="special">,</span> <span class="identifier">to_string</span><span class="special">,</span> <span class="number">1</span><span class="special">)</span>
-<span class="special">*</span> 
+<pre class="programlisting"><span class="identifier">BOOST_TYPE_ERASURE_FREE</span><span class="special">(</span><span class="special">(</span><span class="identifier">boost</span><span class="special">)</span><span class="special">(</span><span class="identifier">has_to_string</span><span class="special">)</span><span class="special">,</span> <span class="identifier">to_string</span><span class="special">,</span> <span class="number">1</span><span class="special">)</span>
 </pre>
 <p> </p>
 <div class="variablelist"><table border="0" class="variablelist compact">
