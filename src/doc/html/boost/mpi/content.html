@@ -35,30 +35,30 @@
 <span class="keyword">class</span> <a class="link" href="content.html" title="Class content">content</a> <span class="special">{</span>
 <span class="keyword">public</span><span class="special">:</span>
   <span class="comment">// <a class="link" href="content.html#boost.mpi.contentconstruct-copy-destruct">construct/copy/destruct</a></span>
-  <a class="link" href="content.html#idp94772024-bb"><span class="identifier">content</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
-  <a class="link" href="content.html#idp94772616-bb"><span class="identifier">content</span></a><span class="special">(</span><span class="identifier">MPI_Datatype</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span>
-  content&amp; <a class="link" href="content.html#idp94775272-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="identifier">MPI_Datatype</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="content.html#idp212765136-bb"><span class="identifier">content</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="content.html#idp212766368-bb"><span class="identifier">content</span></a><span class="special">(</span><span class="identifier">MPI_Datatype</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <a class="link" href="content.html" title="Class content">content</a> <span class="special">&amp;</span> <a class="link" href="content.html#idp208274672-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="identifier">MPI_Datatype</span><span class="special">)</span><span class="special">;</span>
 
-  <span class="comment">// <a class="link" href="content.html#idp94769672-bb">public member functions</a></span>
-  <span class="identifier">MPI_Datatype</span> <a class="link" href="content.html#idp94769880-bb"><span class="identifier">get_mpi_datatype</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
-  <span class="keyword">void</span> <a class="link" href="content.html#idp94771288-bb"><span class="identifier">commit</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="content.html#idp212760320-bb">public member functions</a></span>
+  <span class="identifier">MPI_Datatype</span> <a class="link" href="content.html#idp212760880-bb"><span class="identifier">get_mpi_datatype</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="content.html#idp212763664-bb"><span class="identifier">commit</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp162838104"></a><h2>Description</h2>
+<a name="idp342257760"></a><h2>Description</h2>
 <p>The <code class="computeroutput">content</code> class indicates that Boost.MPI should transmit or receive the content of an object, but without any information about the structure of the object. It is only meaningful to transmit the content of an object after the receiver has already received the skeleton for the same object.</p>
 <p>Most users will not use <code class="computeroutput">content</code> objects directly. Rather, they will invoke <code class="computeroutput">send</code>, <code class="computeroutput">recv</code>, or <code class="computeroutput">broadcast</code> operations using <code class="computeroutput">get_content()</code>. </p>
 <div class="refsect2">
-<a name="idp162841016"></a><h3>
+<a name="idp342263328"></a><h3>
 <a name="boost.mpi.contentconstruct-copy-destruct"></a><code class="computeroutput">content</code> 
         public
        construct/copy/destruct</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><a name="idp94772024-bb"></a><span class="identifier">content</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><a name="idp212765136-bb"></a><span class="identifier">content</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
 <p>Constructs an empty <code class="computeroutput">content</code> object. This object will not be useful for any Boost.MPI operations until it is reassigned. </p>
 </li>
 <li class="listitem">
-<pre class="literallayout"><a name="idp94772616-bb"></a><span class="identifier">content</span><span class="special">(</span><span class="identifier">MPI_Datatype</span> d<span class="special">,</span> <span class="keyword">bool</span> committed <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><a name="idp212766368-bb"></a><span class="identifier">content</span><span class="special">(</span><span class="identifier">MPI_Datatype</span> d<span class="special">,</span> <span class="keyword">bool</span> committed <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span></pre>
 <p>This routine initializes the <code class="computeroutput">content</code> object with an MPI data type that refers to the content of an object without its structure.</p>
 <p>
 </p>
@@ -89,7 +89,7 @@
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout">content&amp; <a name="idp94775272-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="identifier">MPI_Datatype</span> d<span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">const</span> <a class="link" href="content.html" title="Class content">content</a> <span class="special">&amp;</span> <a name="idp208274672-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="identifier">MPI_Datatype</span> d<span class="special">)</span><span class="special">;</span></pre>
 <p>Replace the MPI data type referencing the content of an object.</p>
 <p>
 
@@ -123,11 +123,11 @@
 </ol></div>
 </div>
 <div class="refsect2">
-<a name="idp162856520"></a><h3>
-<a name="idp94769672-bb"></a><code class="computeroutput">content</code> public member functions</h3>
+<a name="idp342296064"></a><h3>
+<a name="idp212760320-bb"></a><code class="computeroutput">content</code> public member functions</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
-<pre class="literallayout"><span class="identifier">MPI_Datatype</span> <a name="idp94769880-bb"></a><span class="identifier">get_mpi_datatype</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="identifier">MPI_Datatype</span> <a name="idp212760880-bb"></a><span class="identifier">get_mpi_datatype</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
 <p>Retrieve the MPI data type that refers to the content of the object.</p>
 <p>
 </p>
@@ -143,7 +143,7 @@
 </table></div>
 </li>
 <li class="listitem">
-<pre class="literallayout"><span class="keyword">void</span> <a name="idp94771288-bb"></a><span class="identifier">commit</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp212763664-bb"></a><span class="identifier">commit</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
 <p>Commit the MPI data type referring to the content of the object. </p>
 </li>
 </ol></div>

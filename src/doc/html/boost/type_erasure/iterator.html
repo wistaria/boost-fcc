@@ -42,19 +42,18 @@
   <span class="keyword">typedef</span> <span class="identifier">DifferenceType</span> <a name="boost.type_erasure.iterator.difference_type"></a><span class="identifier">difference_type</span><span class="special">;</span>
 <span class="special">}</span><span class="special">;</span></pre></div>
 <div class="refsect1">
-<a name="idp229026312"></a><h2>Description</h2>
+<a name="idp479211664"></a><h2>Description</h2>
 <p>The <a class="link" href="iterator.html" title="Struct template iterator">iterator</a> concept can be used for any iterator category.</p>
 <p>
 The value_type of the iterator is deduced. To force it to be a specific type, use the <a class="link" href="same_type.html" title="Struct template same_type">same_type</a> concept.</p>
 <p>Example:</p>
-<pre class="programlisting"><span class="special">*</span> <span class="identifier">mpl</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span>
-<span class="special">*</span>   <span class="identifier">iterator</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">forward_traversal_tag</span><span class="special">&gt;</span><span class="special">,</span>
-<span class="special">*</span>   <span class="identifier">same_type</span><span class="special">&lt;</span><span class="identifier">iterator</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">forward_traversal_tag</span><span class="special">&gt;</span><span class="special">::</span><span class="identifier">value_type</span><span class="special">,</span> <span class="keyword">int</span><span class="special">&gt;</span> <span class="special">&gt;</span> <span class="identifier">int_it</span><span class="special">;</span>
-<span class="special">*</span> 
+<pre class="programlisting"><span class="identifier">mpl</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span>
+  <span class="identifier">iterator</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">forward_traversal_tag</span><span class="special">&gt;</span><span class="special">,</span>
+  <span class="identifier">same_type</span><span class="special">&lt;</span><span class="identifier">iterator</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">forward_traversal_tag</span><span class="special">&gt;</span><span class="special">::</span><span class="identifier">value_type</span><span class="special">,</span> <span class="keyword">int</span><span class="special">&gt;</span> <span class="special">&gt;</span> <span class="identifier">int_it</span><span class="special">;</span>
 </pre>
 <p> </p>
 <div class="refsect2">
-<a name="idp229037176"></a><h3>Template Parameters</h3>
+<a name="idp479231008"></a><h3>Template Parameters</h3>
 <div class="orderedlist"><ol class="orderedlist" type="1">
 <li class="listitem">
 <pre class="literallayout"><span class="keyword">typename</span> Traversal</pre>

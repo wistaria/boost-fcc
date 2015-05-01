@@ -7,7 +7,7 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 
 #include <deque>
-#include <boost/detail/lightweight_test.hpp>
+#include <boost/core/lightweight_test.hpp>
 #include "check_equal_containers.hpp"
 
 namespace boost {
@@ -23,7 +23,7 @@ void
       , std::size_t index
     )
 {
-    BOOST_TEST(CheckEqualContainers(&std_deque, &seq_container));
+    BOOST_TEST(CheckEqualContainers(std_deque, seq_container));
 
     std_deque.insert(
         std_deque.begin() + index
@@ -36,7 +36,7 @@ void
       , input_deque.begin()
       , input_deque.end()
     );
-    BOOST_TEST(CheckEqualContainers(&std_deque, &seq_container));
+    BOOST_TEST(CheckEqualContainers(std_deque, seq_container));
 }
 
 template<class SeqContainer>

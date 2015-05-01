@@ -29,16 +29,14 @@
 #include <boost/type_traits/has_trivial_copy.hpp>
 #include <boost/type_traits/has_trivial_constructor.hpp>
 #include <boost/type_traits/has_trivial_destructor.hpp>
-//#include <boost/type_traits/has_nothrow_constructor.hpp>
-//#include <boost/type_traits/has_nothrow_copy.hpp>
-//#include <boost/type_traits/has_nothrow_assign.hpp>
-//#include <boost/type_traits/has_nothrow_destructor.hpp>
-
-#include <boost/detail/no_exceptions_support.hpp>
-#include <boost/config.hpp>
-#include <boost/move/move.hpp>
-#include <boost/utility/addressof.hpp>
+#include <boost/move/traits.hpp>
 #include <boost/iterator/iterator_traits.hpp>
+
+#include <boost/core/no_exceptions_support.hpp>
+#include <boost/config.hpp>
+#include <boost/move/utility_core.hpp>
+#include <boost/move/algorithm.hpp>
+#include <boost/utility/addressof.hpp>
 
 // TODO - move vectors iterators optimization to the other, optional file instead of checking defines?
 
@@ -52,9 +50,9 @@ namespace boost { namespace container { namespace varray_detail {
 template <typename I>
 struct are_elements_contiguous : boost::is_pointer<I>
 {};
-    
+
 #if defined(BOOST_CONTAINER_VARRAY_ENABLE_VECTORS_OPTIMIZATION) && !defined(BOOST_NO_EXCEPTIONS)
-    
+
 template <typename Pointer>
 struct are_elements_contiguous<
     boost::container::container_detail::vector_const_iterator<Pointer>
@@ -68,7 +66,7 @@ struct are_elements_contiguous<
 {};
 
 #if defined(BOOST_DINKUMWARE_STDLIB)
-    
+
 template <typename T>
 struct are_elements_contiguous<
     std::_Vector_const_iterator<T>
@@ -101,7 +99,7 @@ struct are_elements_contiguous<
 #else // OTHER_STDLIB
 
 // TODO - add other iterators implementations
-    
+
 #endif // STDLIB
 
 #endif // BOOST_CONTAINER_VARRAY_ENABLE_VECTORS_OPTIMIZATION && !BOOST_NO_EXCEPTIONS
@@ -212,7 +210,7 @@ inline O copy(I first, I last, O dst)
         >
     >::type
     use_memmove;
-    
+
     return copy_dispatch(first, last, dst, use_memmove());                       // may throw
 }
 
@@ -566,13 +564,6 @@ template <typename DisableTrivialInit, typename I, typename P>
 inline
 void construct(DisableTrivialInit const&, I pos, BOOST_RV_REF(P) p)
 {
-    typedef typename
-    ::boost::mpl::and_<
-        is_corresponding_value<I, P>,
-        ::boost::has_trivial_copy<P>
-    >::type
-    use_memcpy;
-
     typedef typename boost::iterator_value<I>::type V;
     new (static_cast<void*>(boost::addressof(*pos))) V(::boost::move(p));                      // may throw
 }

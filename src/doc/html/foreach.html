@@ -282,7 +282,7 @@
       I discourage this. It leads to name conflicts within the <code class="computeroutput"><span class="identifier">BOOST_FOREACH</span></code>
       macro itself, where <code class="computeroutput"><span class="identifier">foreach</span></code>
       is the name of a namespace. Besides, <code class="computeroutput"><span class="identifier">foreach</span></code>
-      is a common-eough identifier; even <a href="http://qt.digia.com/" target="_top">Qt</a>
+      is a common-enough identifier; even <a href="http://qt.digia.com/" target="_top">Qt</a>
       defines it as a macro. If you insist on using <code class="computeroutput"><span class="identifier">foreach</span></code>,
       you might try something like this:
     </p>
@@ -297,13 +297,13 @@
 <span class="preprocessor">#define</span> <span class="identifier">foreach</span>   <span class="identifier">BOOST_FOREACH</span>
 </pre>
 <p>
-      This will work around <span class="emphasis"><em>some</em></span> of the problem you're likely
+      This will work around <span class="emphasis"><em>some</em></span> of the problems you're likely
       to encounter, but not all. Prefer using a different identifier.
     </p>
 </div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
-<td align="left"><p><small>Last revised: October 28, 2013 at 23:50:06 GMT</small></p></td>
+<td align="left"><p><small>Last revised: October 30, 2014 at 10:18:54 GMT</small></p></td>
 <td align="right"><div class="copyright-footer"></div></td>
 </tr></table>
 <hr>
