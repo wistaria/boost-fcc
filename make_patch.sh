@@ -1,6 +1,5 @@
 #!/bin/sh
 
-VERSION_MAJOR=1_55
-VERSION_MINOR=0
+BOOST_VERSION=1_57_0
 
-git diff --no-prefix -r import_$VERSION_MAJOR src | sed s^src/boost^boost_${VERSION_MAJOR}_${VERSION_MINOR}/boost^g > boost_${VERSION_MAJOR}_${VERSION_MINOR}.patch
+git diff --no-prefix -r import_$BOOST_VERSION src | sed s^src/boost^boost_${BOOST_VERSION}/boost^g > boost_${BOOST_VERSION}.patch
