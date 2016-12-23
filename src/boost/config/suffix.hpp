@@ -26,7 +26,7 @@
 #ifndef BOOST_CONFIG_SUFFIX_HPP
 #define BOOST_CONFIG_SUFFIX_HPP
 
-#if defined(__GNUC__) && (__GNUC__ >= 4)
+#if defined(__GNUC__) && (__GNUC__ >= 4) && !defined(__FCC_VERSION)
 //
 // Some GCC-4.x versions issue warnings even when __extension__ is used,
 // so use this as a workaround:

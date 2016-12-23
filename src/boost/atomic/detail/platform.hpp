@@ -24,7 +24,7 @@
 #if !defined(BOOST_ATOMIC_FORCE_FALLBACK)
 
 // Compiler-based backends
-#if ((defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__) >= 407)) ||\
+#if ((defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__) >= 407)) && !defined(__FCC_VERSION) ||\
     (defined(BOOST_CLANG) && ((__clang_major__ * 100 + __clang_minor__) >= 302))) &&\
     (\
         (__GCC_ATOMIC_BOOL_LOCK_FREE + 0) == 2 ||\
@@ -59,7 +59,7 @@
 
 #define BOOST_ATOMIC_DETAIL_PLATFORM gcc_arm
 
-#elif defined(__GNUC__) && defined(__sparc_v9__)
+#elif defined(__GNUC__) && defined(__sparc_v9__) && !defined(__FCC_VERSION)
 
 #define BOOST_ATOMIC_DETAIL_PLATFORM gcc_sparc
 

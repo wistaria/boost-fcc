@@ -64,4 +64,7 @@
 #pragma once
 #endif
 
+#ifndef BOOST_HAS_PTHREADS
+#error
+#endif
 #endif  // BOOST_CONFIG_HPP

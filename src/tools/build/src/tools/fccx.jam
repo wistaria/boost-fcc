@@ -38,14 +38,19 @@ generators.register-c-compiler fccx.compile.c++ : CPP : OBJ : <toolset>fccx ;
 
 flags fccx OPTIONS <link>shared : -KPIC ;
 
+flags fccx.compile OPTIONS <cflags> ;
+flags fccx.compile.c++ OPTIONS <cxxflags> ;
+flags fccx.compile DEFINES <define> ;
+flags fccx.compile INCLUDES <include> ;
+
 actions compile.c
 {
-    "$(CONFIG_C_COMMAND)" $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
+    "$(CONFIG_C_COMMAND)" -mt $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
 }
 
 actions compile.c++
 {
-    "$(CONFIG_COMMAND)" $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
+    "$(CONFIG_COMMAND)" -Xg -mt $(OPTIONS) -D$(DEFINES) -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
 }
 
 rule link ( targets * : sources * : properties * )
@@ -55,7 +60,7 @@ rule link ( targets * : sources * : properties * )
 
 actions link bind LIBRARIES
 {
-    "$(CONFIG_COMMAND)" $(OPTIONS) -L"$(LINKPATH)" -R"$(RPATH)" -o "$(<)" "$(>)" "$(LIBRARIES)" -Bdynamic -l$(FINDLIBS-SA) -Bstatic -l$(FINDLIBS-ST) -B$(LINK-RUNTIME)
+    "$(CONFIG_COMMAND)" -Xg $(OPTIONS) -L"$(LINKPATH)" -R"$(RPATH)" -o "$(<)" "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-SA) -l$(FINDLIBS-ST) -B$(LINK-RUNTIME)
 }
 
 # Slight mods for dlls
@@ -66,7 +71,7 @@ rule link.dll ( targets * : sources * : properties * )
 
 actions link.dll bind LIBRARIES
 {
-    "$(CONFIG_COMMAND)" $(OPTIONS) -L"$(LINKPATH)" -R"$(RPATH)" -o "$(<)" -h$(<[1]:D=) -G "$(>)" "$(LIBRARIES)" -Bdynamic -l$(FINDLIBS-SA) -Bstatic -l$(FINDLIBS-ST) -B$(LINK-RUNTIME)
+    "$(CONFIG_COMMAND)" -Xg $(OPTIONS) -L"$(LINKPATH)" -R"$(RPATH)" -o "$(<)" -G "$(>)" "$(LIBRARIES)" -Bdynamic -l$(FINDLIBS-SA) -Bstatic -l$(FINDLIBS-ST) -B$(LINK-RUNTIME)
 }
 
 # Declare action for creating static libraries
